@@ -1,0 +1,45 @@
+!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Три счётчика</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; margin-top: 50px; }
+    .block { margin: 30px; }
+    .label { font-size: 1.2em; margin-bottom: 5px; }
+    .counter { font-size: 2em; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h1>Наши счётчики</h1>
+
+  <div class="block">
+    <div class="label">ДеМаркус</div>
+    <div class="counter" id="counter1"></div>
+  </div>
+
+  <div class="block">
+    <div class="label">Никита Рева</div>
+    <div class="counter" id="counter2"></div>
+  </div>
+
+  <div class="block">
+    <div class="label">Нчп</div>
+    <div class="counter" id="counter3"></div>
+  </div>
+
+  <script>
+    function updateCounter(id, startDate) {
+      let start = new Date(startDate);
+      let now = new Date();
+      let diff = Math.floor((now - start) / (1000 * 60 * 60 * 24));
+      document.getElementById(id).textContent = diff + " дней прошло";
+    }
+
+    // Поменяй даты на свои
+    updateCounter("counter1", "2025-07-01");
+    updateCounter("counter2", "2025-05-01");
+    updateCounter("counter3", "2022-02-23");
+  </script>
+</body>
+</html>
